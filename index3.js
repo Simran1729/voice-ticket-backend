@@ -18,6 +18,7 @@ const ZOHO_CLIENT_SECRET = process.env.ZOHO_CLIENT_SECRET;
 const ZOHO_REDIRECT_URI = process.env.ZOHO_REDIRECT_URI;
 const ZOHO_REFRESH_TOKEN = process.env.ZOHO_REFRESH_TOKEN;
 const ZOHO_TOKEN_URL = process.env.ZOHO_TOKEN_URL;
+const ACCESS_TOEKN = process.env.ACCESS_TOKEN;
 
 // Route 1: Check if the server is running
 app.get('/', (req, res) => {
@@ -112,7 +113,7 @@ app.post("/api/create-ticket", async (req, res) => {
 
     try {
         // Step 1: Fetch the access token
-        const accessToken = await fetchAccessToken();
+        const accessToken = '1000.03fe2abba9508b0c2ad8c9b8581308a6.3df7f772defc30a3d3634b2f30734174';
 
         // Step 2: Use the access token to create a ticket
         const response = await axios.post(
@@ -149,4 +150,8 @@ app.post("/api/create-ticket", async (req, res) => {
 });
 
 
-module.exports = app;
+// module.exports = app;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+})
