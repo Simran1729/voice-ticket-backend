@@ -113,7 +113,7 @@ app.post("/api/create-ticket", async (req, res) => {
 
     try {
         // Step 1: Fetch the access token
-        const accessToken = '1000.03fe2abba9508b0c2ad8c9b8581308a6.3df7f772defc30a3d3634b2f30734174';
+        const accessToken = ACCESS_TOEKN;
 
         // Step 2: Use the access token to create a ticket
         const response = await axios.post(
